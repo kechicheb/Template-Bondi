@@ -1,0 +1,333 @@
+:root {
+  --dark-color: #19283f;
+  --green-color: #33d1cc;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa;
+}
+/* Start Components */
+
+/*  Button */
+.button:active , .button:focus{
+  box-shadow:  0 0 0 4px rgb(13 110 253 / 25%);
+ }
+
+ /*  Special heading */
+ .special-heading {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  margin-bottom:60px ;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+ .special-heading::after {
+  content: "";
+  position: absolute;
+  width: 140px;
+  border-bottom: 3px solid var(--green-color);
+  bottom: 0px;
+
+ }
+ .special-heading img {
+  height: 75px;
+ }
+ .special-heading h1 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #212529;
+  line-height: 1.2;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  margin-top: 35px;
+ }
+ .special-heading p {
+  color: rgba(0,0,0,.5);
+  text-transform: uppercase;
+ }
+/* End Components */
+
+/* Start Global Rules */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 786px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+
+/* End Global Rules */
+
+/* Start Nav */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:99;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--dark-color);
+}
+nav .container {
+ 
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .container img {
+  max-width:100px;
+  height: 50px;
+}
+nav .container .nav-menu {
+  height: 100%;
+  align-items: center;
+
+}
+
+nav .container .nav-menu  li {
+  padding: 0px 25px;
+  display: inline-block;
+}
+nav .container .nav-menu  li a {
+  text-decoration: none;
+  color: white; 
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+nav .container .nav-menu  li:first-child a {
+  color: var(--green-color);
+}
+nav .container .nav-menu  li:not(:last-child):hover a{
+  color: var(--green-color);
+} 
+nav .container .nav-menu  li:nth-child(5) {
+  border-right: 1px solid var(--green-color);
+
+}
+nav .container .nav-menu  li:nth-child(6) {
+  padding-left: 25px;
+
+}
+nav .container .nav-menu  svg {
+  color: var(--green-color);
+  font-size: 1.3rem;
+
+
+}
+
+nav .container .nav-menu  .button {
+  color: var(--yellow-color);
+  padding:10px 16px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  background-color: var(--red-color);
+  border-radius: 50px;
+  
+}
+
+nav .container .fa-bars {
+ color: white;
+display: none;
+padding: 7px 15px;
+ font-size: 30px;
+ border: 1px solid var(--green-color);
+ border-radius: 5px;
+ cursor: pointer;
+ display: none;
+ 
+}
+@media (min-width:992) {
+  nav .container .nav-menu {
+   display: flex;
+  }
+
+}
+@media (max-width: 991px) {
+  nav .container {
+      flex-direction: column;
+  }
+
+  .logo-container {
+      width: 100%;
+  }
+  nav .container ul.nav-menu {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+
+  }
+
+  nav .container .nav-menu li {
+      padding: 15px 0 !important;
+  }
+  nav .container .nav-menu  li:nth-child(5) {
+    border: none;
+  }
+  nav .container .nav-menu  li:nth-child(6) {
+    display: none;
+  }
+  nav .container .nav-menu li {
+    display: block;
+    align-self: flex-start;
+  }
+  nav .container .nav-menu  li a {
+    font-size: 16px !important;
+  }
+  nav .container .fa-bars {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 5%;
+      
+  }
+
+}
+
+/* End Nav */
+
+/* Start Landing */
+
+.landing {
+ 
+  width: 100%;
+  height: 100vh;
+  background-color: var(--dark-color);
+  
+  }
+  .landing .container {
+   display: flex;
+   height: 100%;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+  }
+  .landing .container h1 {
+    color: white;
+    font-weight: normal;
+    margin-bottom: 15px;
+  }
+  .landing .container h1 + p {
+    color: rgba(255,255,255,.5);
+  }
+  
+  .landing .container .button {
+    background-color: var(--red-color);
+    margin-top: 60px;
+    border-radius: 40px;
+    color: var(--yellow-color);
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  @media  (max-width: 600px) {
+    .landing .container h1 {
+      font-size: 2rem;
+    }
+    .landing .container h1 + p {
+      font-size: 16px;
+    }
+    .landing .container .button a {
+  
+      padding: 12px;  
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 601px) {
+    .landing .container h1  {
+      font-size: 2.5rem;
+    }
+    .landing .container h1 + p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .landing .container h1  {
+      font-size: 3.2rem;
+    }
+   
+  }
+
+/* End Landing */ 
+
+ /* Start features  */
+.features {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom:60px;
+}
+.features .container .card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+  gap: 30px;
+}
+
+.features .container .card * {
+  text-align: center;
+}
+.features .container .card svg:first-child {
+  color: var(--section-color);
+  font-size: 12rem;
+}
+.features .container .card svg + svg {
+  display: block;
+  margin: -60px auto 0px;
+  color: var(--green-color);
+}
+.features .container .card h2 {
+  font-size: 24px;
+  color: var(--yellow-color);
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 20px 0px;
+}
+.features .container .card p {
+color:rgba(0,0,0,.5);
+line-height: 2;
+}
+ /*  End features */
