@@ -8,3 +8,7 @@ function nav() {
     }
 
 }
+var date = new Date();
+var year = date.getFullYear();
+
+document.getElementById('copyright-year').innerHTML = ("&copy; " + year);
